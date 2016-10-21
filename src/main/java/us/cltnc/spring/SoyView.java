@@ -21,6 +21,7 @@ public class SoyView extends AbstractUrlBasedView {
     protected void renderMergedOutputModel(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         String result = renderer.setData(model).render();
+        response.setContentType("text/html");
         response.getWriter().print(result);
     }
 
